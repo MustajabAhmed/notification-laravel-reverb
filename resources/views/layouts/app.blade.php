@@ -89,6 +89,15 @@
                     alert(event.time);
                 });
         });
+
+        window.addEventListener('DOMContentLoaded', function() {
+            const userId = "{{ Auth::id() }}"; 
+            window.Echo.private(`user.${userId}`)
+                .listen('UserPrivateMessageNotification', (event) => {
+                    // alert(event);
+                    console.log(event)
+                });
+        });
     </script>
 </body>
 
