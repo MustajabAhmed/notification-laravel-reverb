@@ -1,5 +1,3 @@
-// // import './bootstrap';
-// import './echo';
 import Echo from 'laravel-echo';
 
 import Pusher from 'pusher-js';
