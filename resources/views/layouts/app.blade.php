@@ -84,13 +84,6 @@
 
     <script>
         window.addEventListener('DOMContentLoaded', function() {
-            window.Echo.channel('system-maintenance')
-                .listen('SystemMaintenanceEvent', (event) => {
-                    alert(event.time);
-                });
-        });
-
-        window.addEventListener('DOMContentLoaded', function() {
             const userId = "{{ Auth::id() }}"; 
             window.Echo.private(`user.${userId}`)
                 .listen('UserPrivateMessageNotification', (event) => {
@@ -99,6 +92,8 @@
                 });
         });
     </script>
+
+    @stack('scripts')
 </body>
 
 </html>
